@@ -1,0 +1,12 @@
+[Unit]
+Description=My Custom Application
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/myapp.sh
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
