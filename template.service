@@ -4,9 +4,19 @@ After=network.target
 
 [Service]
 Type=simple
+
+User=myuser
+Group=myuser
+
+WorkingDirectory=/opt/myapp
+
 ExecStart=/usr/local/bin/myapp.sh
+
 Restart=on-failure
 RestartSec=5
+
+ProtectSystem=full
+PrivateTmp=true
 
 [Install]
 WantedBy=multi-user.target
